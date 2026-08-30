@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khảo sát đăng ký tài khoản thành viên (Nâng cao)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        .form-container {
+            width: 480px;
+            background-color: #92c0eb;
+            padding: 15px;
+            border: 1px solid #5a8cb9;
+            box-sizing: border-box;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        fieldset {
+            border: 1px solid #707070;
+            background-color: #e3ebf5;
+            margin-bottom: 12px;
+            padding: 12px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 13px;
+            color: #000;
+            padding: 0 5px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .form-group label {
+            width: 140px;
+            font-size: 13px;
+            color: #000;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="date"],
+        .form-group input[type="url"],
+        .form-group select,
+        .form-group textarea {
+            flex: 1;
+            padding: 4px 6px;
+            border: 1px solid #a6a6a6;
+            border-radius: 2px;
+            font-size: 13px;
+            background-color: #fff;
+        }
+
+        .radio-group label, .checkbox-group label {
+            width: auto;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .terms {
+            font-size: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .terms input {
+            margin-right: 5px;
+        }
+
+        .button-group {
+            text-align: center;
+        }
+
+        .button-group input[type="submit"],
+        .button-group input[type="reset"] {
+            font-size: 13px;
+            padding: 4px 12px;
+            margin: 0 3px;
+            border: 1px solid #707070;
+            background-color: #e1e1e1;
+            cursor: pointer;
+        }
+
+        .button-group input:hover {
+            background-color: #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-title">
+            Khảo sát đăng ký tài khoản thành viên
+        </div>
+
+        <form>
+            <!-- Nhóm 1: Thông tin cá nhân -->
+            <fieldset>
+                <legend>Thông tin cá nhân</legend>
+                
+                <div class="form-group">
+                    <label for="hoten">Họ tên:</label>
+                    <input type="text" id="hoten" name="hoten" placeholder="Nguyễn Văn A" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label>Giới tính:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gioitinh" value="nam" checked> Nam</label>
+                        <label><input type="radio" name="gioitinh" value="nu"> Nữ</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sdt">Số điện thoại:</label>
+                    <input type="text" id="sdt" name="sdt" placeholder="0901234567" pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="ngaysinh">Ngày sinh:</label>
+                    <input type="date" id="ngaysinh" name="ngaysinh">
+                </div>
+
+                <div class="form-group">
+                    <label for="thanhpho">Thành phố:</label>
+                    <input type="text" id="thanhpho" name="thanhpho" list="ds-thanhpho" placeholder="Gõ để tìm...">
+                    <datalist id="ds-thanhpho">
+                        <option value="Hà Nội">
+                        <option value="Đà Nẵng">
+                        <option value="TP. Hồ Chí Minh">
+                        <option value="Cần Thơ">
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="matkhau">Mật khẩu:</label>
+                    <input type="password" id="matkhau" name="matkhau" required>
+                </div>
+
+                
+            </fieldset>
+
+            <!-- Nhóm 2: Tùy chọn tài khoản -->
+            <fieldset>
+                <legend>Tùy chọn tài khoản</legend>
+
+                <div class="form-group">
+                    <label for="goithanhvien">Chọn gói thành viên:</label>
+                    <select id="goithanhvien" name="goithanhvien">
+                        <option value="mienphi">Miễn phí</option>
+                        <option value="coban">Cơ bản (50k/tháng)</option>
+                        <option value="caocap">Cao cấp (100k/tháng)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website cá nhân:</label>
+                    <input type="url" id="website" name="website" placeholder="https://facebook.com/your-id">
+                </div>
+
+                <div class="form-group">
+                    <label for="avatar">Tải ảnh đại diện:</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="ghichu">Mô tả bản thân:</label>
+                    <textarea id="ghichu" name="ghichu" rows="2" placeholder="Sở thích, giới thiệu ngắn..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Checkbox Đồng ý điều khoản -->
+            <div class="terms">
+                <input type="checkbox" id="dieukhoan" name="dieukhoan" required>
+                <label for="dieukhoan">Tôi đồng ý với <a href="#">Điều khoản sử dụng</a></label>
+            </div>
+
+            <!-- Nút bấm -->
+            <div class="button-group">
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
