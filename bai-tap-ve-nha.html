@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Sưu Tập Giày Mới</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #e65100;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(230, 81, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .header .line {
+            width: 320px;
+            height: 3px;
+            background-color: #ff6f00;
+            margin: 0 auto 15px auto;
+            border-radius: 2px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* --- Products Grid --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        /* --- Product Card --- */
+        .card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Container ảnh có viền nhạt bên ngoài */
+        .image-box {
+            background-color: #f8fafc;
+            border: 8px solid #f1f5f9;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .image-box img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* Thông tin sản phẩm */
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        /* Giá sản phẩm */
+        .price-section {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .price-current {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .price-old {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+
+        /* Các nút hành động */
+        .card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .btn-detail {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .btn-detail:hover {
+            background-color: #eff6ff;
+        }
+
+        .btn-add-cart {
+            background-color: #0066ff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #0052cc;
+        }
+
+        .btn-add-cart:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Tiêu đề trang -->
+        <header class="header">
+            <h1>Bộ Sưu Tập Giày Mới</h1>
+            <div class="line"></div>
+            <p>Thiết kế tối giản, chất liệu bền bỉ — phù hợp đi học, đi làm và dạo phố.</p>
+        </header>
+
+        <!-- Danh sách sản phẩm -->
+        <main class="product-grid">
+            
+            <!-- Sản phẩm 1 -->
+            <div class="card">
+                <div class="image-box">
+                    <img src="https://beyono.vn/gallery/0a7ade92-03bb-42ea-8a26-4cdb8ac6356a.jpg" alt="Giày Sneaker Trắng Năng Động">
+                </div>
+                <h2 class="card-title">bộ quần áo bóng chuyền trắng xanh năng động</h2>
+                <p class="card-desc">Phong cách tối giản, thoải mái khi chơi bóng .</p>
+                <div class="price-section">
+                    <span class="price-current">600.000 đ</span>
+                    <span class="price-old">720.000 đ</span>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
+                    <button class="btn-add-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="card">
+                <div class="image-box">
+                    <img src="https://beyono.vn/gallery/9ee34a51-7487-4616-8447-64e553deee69.jpg" alt="Giày Sneaker Da Màu Xám">
+                </div>
+                <h2 class="card-title">Giày bóng chuyền da trắng đỏ </h2>
+                <p class="card-desc">Da tổng hợp cao cấp, bền bỉ, Cổ thấp linh hoạt.</p>
+                <div class="price-section">
+                    <span class="price-current">440.000 đ</span>
+                    <span class="price-old">850.000 đ</span>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn-detail">Xem chi tiết</a>
+                    <button class="btn-add-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            
+
+</body>
+</html>
